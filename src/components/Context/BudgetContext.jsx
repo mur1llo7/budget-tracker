@@ -1,5 +1,6 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useReducer, useEffect } from "react";
-import { loadTransaction, saveTransaction } from '../Utils/localStorage'
+import { loadTransactions, saveTransactions } from '../Utils/localStorage'
 
 export const BudgetContext = createContext(null);
 
@@ -37,4 +38,27 @@ function budgetReducer(state, action) {
         default:
             return state;    
     }
+}
+
+export function BudgetProvider({ children }) {
+    const [state, dispatch] = useReducer(budgetReducer, initialState);
+
+    // Load from localStorage on first render
+    useEffect(() => {
+        const saved = loadTransactions();
+        if (saved.length > 0) {
+            dispatch({ type: 'LOAD_TRANSACTIONS', payload: saved });
+        }
+    }, []);
+
+    // Save to localStorage whenever transaction change
+    useEffect(() => {
+        saveTransactions(state.transactions);
+    }, [state.transactions]);
+
+    return (
+        <BudgetContext.Provider value={{ state, dispatch }}>
+            {children}
+        </BudgetContext.Provider>
+    );
 }
