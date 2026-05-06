@@ -1,0 +1,16 @@
+.wrapper {
+    max-width: 960px;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        width: 100%;
+    }
+}
