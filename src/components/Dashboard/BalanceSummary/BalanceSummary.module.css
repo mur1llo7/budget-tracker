@@ -1,0 +1,70 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.balanceCard {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-card);
+}
+
+.balanceLabel {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-1);
+}
+
+.balanceAmount {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.statsRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+}
+
+.statCard {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-card);
+}
+
+.statLabel {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-1);
+}
+
+.statValue {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.income {
+    color: var(--color-income);
+}
+
+.expense {
+    color: var(--color-expense)
+}
+
+@media (min-width: 1024px) {
+    .wrapper { 
+        flex-direction: row; 
+    }
+    .balanceCard { 
+        flex: 1; 
+    }
+    .statsRow { 
+        flex: 1; 
+        grid-template-columns: 1fr 1fr; 
+    }
+}
