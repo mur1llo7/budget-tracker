@@ -1,0 +1,128 @@
+.app {
+    display: flex;
+    min-height: 100vh;
+    background: var(--color-background);
+}
+
+/* Sidebar (desktop only) */
+.sidebar {
+    display: none;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: var(--space-6);
+    padding-bottom: 80px; /* Room for bottom nav on mobile */
+    overflow-y: auto;
+}
+
+/* Bottom nav (Mobile only) */
+.bottomNav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: var(--color-surface);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.06);
+    border-radius: 16px 16px 0 0;
+    z-index: 100;
+}
+
+.bottomNavItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    font-family: inherit;
+    transition: color 0.15s;
+}
+
+.bottomNavItem.active {
+    color: var(--color-accent)
+}
+
+.bottomNavLabel {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.navIcon {
+    font-size: 18px;
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        min-height: 240px;
+        background: var(--color-primary);
+        padding: var(--space-6);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+        flex-shrink: 0;
+    }
+
+    .logo {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: var(--space-8);
+        padding: 0 var(--space-2);
+    }
+
+    .sidebarNav {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-1);
+    }
+
+    .sidebarItem {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        padding: 10px var(--space-3);
+        border-radius: var(--radius-sm);
+        background: none;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 14px;
+        font-family: inherit;
+        transition: all 0.15s;
+        width: 100%;
+        text-align: left;
+    }
+
+    .sidebarItem:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+    }
+
+    .sidebarItem.active {
+        background: var(--color-accent);
+        color: #fff;
+    }
+
+    .main {
+        padding: var(--space-12);
+        padding-bottom: var(--space-12);
+    }
+
+    .bottomNav {
+        display: none;
+    }
+}
