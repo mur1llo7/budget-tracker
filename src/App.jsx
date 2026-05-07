@@ -4,7 +4,7 @@ import Layout from './components/Layout/Layout';
 import Dashboard from './components/Dashboard/Dashboard';
 import TransactionList from './components/Transactions/TransactionList';
 import TransactionForm from './components/TransactionForm/TransactionForm';
-import styles from './app.css';
+import styles from './App.module.css';
 
 function AppContent() {
   const [view, setView] = useState('dashboard');

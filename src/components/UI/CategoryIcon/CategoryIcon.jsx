@@ -1,4 +1,4 @@
-import { getCategoryMeta } from '../../../utils/categories';
+import { getCategoryMeta } from '../../Utils/categories';
 import styles from './CategoryIcon.module.css';
 
 function CategoryIcon({ category, size = 'md' }) {

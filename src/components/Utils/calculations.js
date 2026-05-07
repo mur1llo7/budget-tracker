@@ -54,7 +54,7 @@ export function formatCurrency(amount) {
 }
 
 // Converts a date string into a full date
-export function formatData(dateString) {
+export function formatDate(dateString) {
     const date = new Date(dateString + 'T00:00:00');
     const today = new Date();
     const yesterday = new Date();

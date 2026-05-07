@@ -5,7 +5,7 @@ import { loadTransactions, saveTransactions } from '../Utils/localStorage'
 export const BudgetContext = createContext(null);
 
 const initialState = {
-    transatcions: [],
+    transactions: [],
 };
 
 function budgetReducer(state, action) {

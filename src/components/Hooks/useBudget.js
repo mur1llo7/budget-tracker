@@ -2,12 +2,19 @@ import { useContext } from "react";
 import { BudgetContext } from '../Context/BudgetContext';
 import { getTotals, getSpendingByCategory } from '../Utils/calculations';
 
+
 export function useBudget() {
-    const { state, dispatch } = useContext(BudgetContext);
-    const { transactions } = state;
+    const context = useContext(BudgetContext);
+
+    if (!context) {
+    throw new Error('useBudget must be used inside BudgetProvider');
+}
+
+    const { state, dispatch } = context;
+    const transactions = state?.transactions ?? [];
 
     const totals = getTotals(transactions);
-    const SpendingByCategory = getSpendingByCategory(transactions);
+    const spendingByCategory = getSpendingByCategory(transactions);
 
 function addTransaction(tx) {
     dispatch({
@@ -30,7 +37,7 @@ function deleteTransaction(id) {
     return {
         transactions,
         totals,
-        SpendingByCategory,
+        spendingByCategory,
         addTransaction,
         editTransaction,
         deleteTransaction,

@@ -1,6 +1,6 @@
 const KEY = 'budget-tracker-transactions';
 
-export function loadTransaction() {
+export function loadTransactions() {
     try {
         const saved = localStorage.getItem(KEY);
         return saved ? JSON.parse(saved) : [];
@@ -16,3 +16,5 @@ export function saveTransactions(transactions) {
         console.error('Failed to save transactions')
     }
 }
+
+export default loadTransactions;

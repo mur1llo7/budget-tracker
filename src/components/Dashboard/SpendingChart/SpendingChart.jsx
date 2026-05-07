@@ -7,7 +7,7 @@ import styles from './SpendingChart.module.css';
 function SpendingChart() {
     const { spendingByCategory } = useBudget();
 
-    if (spendingByCategory.lenght === 0) {
+    if (spendingByCategory.length === 0) {
         return (
             <div className={styles.card}>
                 <h3 className={styles.title}>Spending Breakdown</h3>
