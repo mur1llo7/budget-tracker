@@ -68,3 +68,10 @@
 .input:focus {
     border-color: var(--color-accent);
 }
+
+@media (min-width: 1024px) {
+    .wrapper {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+}

@@ -9,3 +9,7 @@
   color: var(--color-text-primary);
   margin-bottom: var(--space-6);
 }
+
+@media (min-width: 1024px) {
+  .page { max-width: 100%; }
+}

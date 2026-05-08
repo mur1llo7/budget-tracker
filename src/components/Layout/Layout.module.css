@@ -12,9 +12,10 @@
 /* Main */
 .main {
   flex: 1;
-  padding: var(--space-6);
+  padding: var(--space-4);
   padding-bottom: 80px; /* Room for bottom nav on mobile */
   overflow-y: auto;
+  min-height: 100vh;
 }
 
 /* Bottom nav (Mobile only) */
@@ -164,6 +165,11 @@
 }
 
 @media (min-width: 1024px) {
+  .main {
+    padding: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+  
   .fab {
     display: none;
   }
@@ -192,5 +198,12 @@
   .desktopDate {
     font-size: 13px;
     color: var(--color-text-secondary);
+  }
+}
+
+@media (min-width: 480px) {
+  .main {
+    padding: var(--space-6);
+    padding-bottom: 80px;
   }
 }
