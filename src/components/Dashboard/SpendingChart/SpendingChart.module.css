@@ -55,3 +55,7 @@
     text-align: center;
     padding: var(--space-8) 0;
 }
+
+@media (min-width: 1024px) {
+    .card { margin-bottom: 0; }
+}
