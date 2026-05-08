@@ -5,6 +5,9 @@ Inspired by the Vytrano design system
 
 **Live demo:** Coming soon
 
+![Budget Tracker Screenshot](./public/ss%20desktop.png)
+![Budget Tracker Screenshot](./public/ss%20mobile.png)
+
 ## Tech Stack
 React · Vite · Recharts · CSS Modules · localStorage · Vercel
 
@@ -23,7 +26,20 @@ React · Vite · Recharts · CSS Modules · localStorage · Vercel
 
 ## Project Structure
 src/
-  components/   UI components
-  context/      Global state (useReducer + Context)
-  hooks/        useBudget hook
-  utils/        calculations, categories, localStorage helpers
+components/
+Dashboard/        Balance summary + spending chart
+Transactions/     Transaction list grouped by date
+TransactionForm/  Add and edit form
+Layout/           Responsive shell — mobile nav + desktop sidebar
+UI/               Button, CategoryIcon primitives
+context/            BudgetContext — useReducer + localStorage sync
+hooks/              useBudget — clean public API for state
+utils/              calculations, categories, localStorage helpers
+
+## What I learned
+
+- `useReducer` + Context for app-wide state management
+- Separation of concerns — services, hooks, components each with one job
+- Professional Git workflow — feature branches, conventional commits, PRs
+- Mobile-first responsive CSS — same codebase, two completely different layouts
+- Translating a Figma design system directly into CSS variables
