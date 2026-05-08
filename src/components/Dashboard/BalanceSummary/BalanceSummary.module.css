@@ -1,70 +1,96 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    margin-bottom: var(--space-6);
+display: flex;
+flex-direction: column;
+gap: var(--space-3);
+margin-bottom: var(--space-6);
+}
+
+.greeting { margin-bottom: var(--space-1); }
+
+.greetingText {
+font-size: 12px;
+color: var(--color-text-secondary);
+}
+
+.greetingName {
+font-size: 18px;
+font-weight: 700;
+color: var(--color-text-primary);
 }
 
 .balanceCard {
-    background: var(--color-surface);
-    border-radius: var(--radius-lg);
-    padding: var(--space-6);
-    box-shadow: var(--shadow-card);
+background: var(--color-surface);
+border-radius: var(--radius-lg);
+padding: var(--space-6);
+box-shadow: var(--shadow-card);
 }
 
 .balanceLabel {
-    font-size: 13px;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-1);
+font-size: 12px;
+color: var(--color-text-secondary);
+margin-bottom: var(--space-1);
 }
 
 .balanceAmount {
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--color-text-primary);
+font-size: 36px;
+font-weight: 700;
+color: var(--color-text-primary);
+line-height: 1.1;
+}
+
+.balanceSubtitle {
+font-size: 12px;
+color: var(--color-text-secondary);
+margin-top: var(--space-1);
+margin-bottom: var(--space-4);
 }
 
 .statsRow {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3);
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: var(--space-2);
 }
 
-.statCard {
-    background: var(--color-surface);
-    border-radius: var(--radius-md);
-    padding: var(--space-4);
-    box-shadow: var(--shadow-card);
+.statPill {
+background: var(--color-background);
+border-radius: var(--radius-sm);
+padding: var(--space-2) var(--space-3);
 }
 
 .statLabel {
-    font-size: 11px;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-1);
+font-size: 10px;
+color: var(--color-text-secondary);
+margin-bottom: 2px;
 }
 
 .statValue {
-    font-size: 20px;
-    font-weight: 700;
+font-size: 13px;
+font-weight: 600;
+color: var(--color-text-primary);
 }
 
-.income {
-    color: var(--color-income);
-}
+.income  { color: var(--color-income); }
+.expense { color: var(--color-expense); }
 
-.expense {
-    color: var(--color-expense)
-}
-
+/* Desktop — horizontal layout */
 @media (min-width: 1024px) {
-    .wrapper { 
-        flex-direction: row; 
-    }
-    .balanceCard { 
-        flex: 1; 
-    }
-    .statsRow { 
-        flex: 1; 
-        grid-template-columns: 1fr 1fr; 
-    }
+  .greeting { display: none; } /* shown in Layout header instead */
+
+.balanceCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-6);
+    align-items: center;
+}
+
+.balanceLabel { grid-column: 1 / -1; margin-bottom: 0; }
+
+.balanceAmount { font-size: 42px; }
+
+.balanceSubtitle { display: none; }
+
+.statsRow {
+    grid-column: 2 / -1;
+    grid-template-columns: 1fr 1fr;
+}
 }

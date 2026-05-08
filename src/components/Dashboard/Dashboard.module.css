@@ -1,16 +1,60 @@
-.wrapper {
-    max-width: 960px;
+.wrapper { width: 100%; }
+
+.mobileOnly  { display: block; }
+.desktopOnly { display: none; }
+
+/* Summary cards */
+.summaryRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
 }
 
-.title {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-6);
+.summaryCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+}
+
+.summaryLabel {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.summaryValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.income  { color: var(--color-income); }
+.expense { color: var(--color-expense); }
+
+/* Content grid */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.recentCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+}
+
+.recentTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
 }
 
 @media (min-width: 1024px) {
-    .wrapper {
-        width: 100%;
-    }
+  .mobileOnly  { display: none; }
+  .desktopOnly { display: block; }
 }
