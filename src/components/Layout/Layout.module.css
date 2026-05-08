@@ -37,15 +37,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  justify-content: center;
+  gap: 4px;
   background: none;
-  border: none;
+  border: none;           
+  outline: none;          
   cursor: pointer;
-  padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  padding: 8px 8px;
   color: var(--color-text-muted);
   font-family: inherit;
   transition: color 0.15s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .bottomNavItem.active {
@@ -53,12 +55,20 @@
 }
 
 .bottomNavLabel {
+  display: flex;
   font-size: 10px;
   font-weight: 500;
 }
 
 .navIcon {
   font-size: 18px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background: none;
+  width: 20px;
+  height: 20px;
 }
 
 /* Desktop breakpoint */
@@ -98,6 +108,8 @@
     padding: 10px var(--space-3);
     border-radius: var(--radius-sm);
     background: none;
+    border: none;
+    outline: none;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.45);
     font-size: 14px;

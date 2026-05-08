@@ -46,6 +46,13 @@ function TransactionForm({ existing, onDone }) {
 
         {/* Income / Expense Toggle */}
         <div className={styles.toggle}>
+            <button
+                type="button"
+                className={`${styles.toggleBtn} ${form.type === 'income' ? styles.toggleActive : ''}`}
+                onClick={() => handleChange('type', 'income')}
+            >
+            Income
+            </button>
             <button className={`${styles.toggleBtn} ${form.type === 'expense' ? styles.toggleActive : ''}`}
             onClick={() => handleChange('type', 'expense')}>
                 Expense
