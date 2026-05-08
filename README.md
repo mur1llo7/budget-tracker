@@ -3,7 +3,7 @@
 A personal finance tracker to manage income and expense, visualize spending by category, and track your balance over time.
 Inspired by the Vytrano design system
 
-**Live demo:** Coming soon
+**Live demo:** https://budget-tracker-phi-peach.vercel.app/
 
 ![Budget Tracker Screenshot](./public/ss%20desktop.png)
 ![Budget Tracker Screenshot](./public/ss%20mobile.png)
