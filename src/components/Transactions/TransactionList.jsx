@@ -3,9 +3,11 @@ import { groupByDate } from '../Utils/calculations';
 import TransactionGroup from './TransactionGroup';
 import styles from './Transactions.module.css'
 
-function TransactionList({ onItemClick }) {
+function TransactionList({ onItemClick, limit }) {
     const { transactions } = useBudget();
-    const grouped = groupByDate(transactions);
+    // Apply limit if provided (for dashboard recent transactions)
+    const displayed = limit ? transactions.slice(0, limit) : transactions;
+    const grouped = groupByDate(displayed);
     const dates = Object.keys(grouped);
 
 if (dates.length === 0) {
